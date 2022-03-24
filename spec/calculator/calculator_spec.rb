@@ -1,7 +1,7 @@
 require 'calculator'
 
 describe Calculator do
-    context 'use sum method for 2 numbers' do
+    context '#sum' do
         it 'positive numbers' do
             calc = Calculator.new
             result = calc.sum(5, 7)
