@@ -1,9 +1,13 @@
 require 'calculator'
 
 describe Calculator do
+    # error matcher
     context '#div' do
         it 'divide by 0' do
-            expect { subject.div(8, 0)}.to raise_error(ZeroDivisionError)
+            expect { subject.div(8, 0)}.to raise_error(ZeroDivisionError) # using error class
+            expect { subject.div(8, 0)}.to raise_error("divided by 0") # using error message
+            expect { subject.div(8, 0)}.to raise_error(ZeroDivisionError, "divided by 0") # both
+            expect { subject.div(8, 0)}.to raise_error(/divided/)# regular expression
         end
     end
 
